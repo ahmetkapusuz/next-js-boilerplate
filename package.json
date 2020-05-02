@@ -1,0 +1,30 @@
+{
+  "name": "next-js-boilerplate",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": {
+    "name": "Ahmet Kapusuz",
+    "email": "ahmetkapusuz@gmail.com",
+    "url": "https://ahmetkapusuz.com"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "5.3.18",
+    "@storybook/addon-links": "5.3.18",
+    "@storybook/addons": "5.3.18",
+    "@storybook/react": "5.3.18",
+    "babel-loader": "^8.1.0"
+  }
+}

@@ -11,20 +11,21 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.0"
   },
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-actions": "5.3.18",
-    "@storybook/addon-links": "5.3.18",
     "@storybook/addons": "5.3.18",
     "@storybook/react": "5.3.18",
-    "babel-loader": "^8.1.0"
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "storybook-addon-styled-component-theme": "^1.3.0"
   }
 }

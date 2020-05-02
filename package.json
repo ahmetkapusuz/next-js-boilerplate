@@ -11,6 +11,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "test": "jest",
     "storybook": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook"
   },
@@ -25,8 +26,10 @@
   "devDependencies": {
     "@storybook/addons": "5.3.18",
     "@storybook/react": "5.3.18",
+    "@testing-library/react": "^10.0.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "jest": "^25.5.4",
     "storybook-addon-styled-component-theme": "^1.3.0"
   }
 }

@@ -9,7 +9,7 @@ const Header = styled.h1`
 const HelloWorld = () => {
   return (
     <div>
-      <Header>HelloWorld</Header>
+      <Header>Hello World</Header>
     </div>
   );
 };

@@ -10,6 +10,8 @@ export default () => (
   <Container>
     <h1>Next.js Boilerplate</h1>
     <HelloWorld />
-    <Link href="/characters">Characters</Link>
+    <Link href="/characters">
+      <a>Characters</a>
+    </Link>
   </Container>
 );

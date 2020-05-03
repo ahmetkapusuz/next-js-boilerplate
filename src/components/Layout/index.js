@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from '../Header.js';
 
 const Container = styled.div`
   display: flex;
@@ -8,10 +9,19 @@ const Container = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+
+  a {
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 const Layout = ({ children }) => {
-  return <Container>{children}</Container>;
+  return (
+    <Container>
+      <Header />
+      {children}
+    </Container>
+  );
 };
 
 export default Layout;

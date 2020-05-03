@@ -8,7 +8,6 @@ const Container = styled.div`
 
 export default () => (
   <Container>
-    <h1>Next.js Boilerplate</h1>
     <HelloWorld />
     <Link href="/characters">
       <a>Characters</a>

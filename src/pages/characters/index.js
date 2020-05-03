@@ -16,6 +16,7 @@ const ALL_CHARACTERS = `
 
 const StyledList = styled.ul`
   list-style: decimal;
+  line-height: 1.5;
 `;
 
 const Characters = ({ data }) => {

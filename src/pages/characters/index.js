@@ -38,13 +38,9 @@ const Characters = ({ data }) => {
 };
 
 export async function getStaticProps() {
-  const response = await request(
-    'https://rickandmortyapi.com/graphql/',
-    ALL_CHARACTERS,
-    {
-      id: 1,
-    }
-  );
+  const response = await request(process.env.GRAPHQL_API_URL, ALL_CHARACTERS, {
+    id: 1,
+  });
 
   const data = response.current.results;
 

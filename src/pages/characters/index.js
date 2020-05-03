@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import styled from 'styled-components';
 import { request } from 'graphql-request';
 
 const ALL_CHARACTERS = `
@@ -13,26 +14,30 @@ const ALL_CHARACTERS = `
   }
 `;
 
+const StyledList = styled.ul`
+  list-style: decimal;
+`;
+
 const Characters = ({ data }) => {
   return (
     <div>
-      <ul>
+      <StyledList>
         {data &&
           data.map((char) => {
             return (
               <li key={`character-${char.id}`}>
-                <Link href={`/characters/${char.id}`}>{char.name}</Link>
+                <Link href={`/characters/${char.id}`}>
+                  <a>{char.name}</a>
+                </Link>
               </li>
             );
           })}
-      </ul>
+      </StyledList>
     </div>
   );
 };
 
 export async function getStaticProps() {
-  // const data = { id: 1, name: 'Rick' };
-
   const response = await request(
     'https://rickandmortyapi.com/graphql/',
     ALL_CHARACTERS,
@@ -41,7 +46,6 @@ export async function getStaticProps() {
     }
   );
 
-  console.log('response', response);
   const data = response.current.results;
 
   return {

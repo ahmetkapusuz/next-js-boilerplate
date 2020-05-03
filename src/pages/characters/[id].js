@@ -18,7 +18,6 @@ export const CHARACTER_DETAIL = gql`
 
 const CharacterDetail = () => {
   const router = useRouter();
-  console.log('router.query', router.query);
   const { id } = router.query;
 
   const { loading, error, data } = useQuery(CHARACTER_DETAIL, {

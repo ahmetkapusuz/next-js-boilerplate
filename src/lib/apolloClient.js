@@ -9,7 +9,7 @@ export default function createApolloClient(initialState, ctx) {
   return new ApolloClient({
     ssrMode: Boolean(ctx),
     link: new HttpLink({
-      uri: 'https://rickandmortyapi.com/graphql/',
+      uri: process.env.GRAPHQL_API_URL, // URL defined as env variable in next.config.js
       credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
       fetch,
     }),

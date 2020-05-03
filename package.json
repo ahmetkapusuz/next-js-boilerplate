@@ -13,6 +13,7 @@
     "start": "next start",
     "test": "jest",
     "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
     "storybook": "start-storybook -p 6006 --ci",
     "build-storybook": "build-storybook"
   },

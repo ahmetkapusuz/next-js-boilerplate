@@ -6,12 +6,10 @@ const StyledHeader = styled.div`
   top: 0;
 `;
 
-const Header = () => {
-  return (
-    <StyledHeader>
-      <h1>Next.js Boilerplate</h1>
-    </StyledHeader>
-  );
-};
+const Header = () => (
+  <StyledHeader>
+    <h1>Next.js Boilerplate</h1>
+  </StyledHeader>
+);
 
 export default Header;

@@ -19,24 +19,20 @@ const StyledList = styled.ul`
   line-height: 1.5;
 `;
 
-const Characters = ({ data }) => {
-  return (
-    <div>
-      <StyledList>
-        {data &&
-          data.map((char) => {
-            return (
-              <li key={`character-${char.id}`}>
-                <Link href={`/characters/${char.id}`}>
-                  <a>{char.name}</a>
-                </Link>
-              </li>
-            );
-          })}
-      </StyledList>
-    </div>
-  );
-};
+const Characters = ({ data }) => (
+  <div>
+    <StyledList>
+      {data &&
+        data.map((char) => (
+          <li key={`character-${char.id}`}>
+            <Link href={`/characters/${char.id}`}>
+              <a>{char.name}</a>
+            </Link>
+          </li>
+        ))}
+    </StyledList>
+  </div>
+);
 
 export async function getStaticProps() {
   const response = await request(process.env.GRAPHQL_API_URL, ALL_CHARACTERS, {

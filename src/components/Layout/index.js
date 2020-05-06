@@ -15,13 +15,11 @@ const Container = styled.div`
   }
 `;
 
-const Layout = ({ children }) => {
-  return (
-    <Container>
-      <Header />
-      {children}
-    </Container>
-  );
-};
+const Layout = ({ children }) => (
+  <Container>
+    <Header />
+    {children}
+  </Container>
+);
 
 export default Layout;

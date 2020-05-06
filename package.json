@@ -15,7 +15,9 @@
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "storybook": "start-storybook -p 6006 --ci",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@apollo/react-hooks": "3.1.5",
@@ -38,11 +40,21 @@
     "@storybook/addons": "5.3.18",
     "@storybook/react": "5.3.18",
     "@testing-library/react": "^10.0.4",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-graphql-tag": "^2.5.0",
     "babel-plugin-styled-components": "^1.10.7",
     "cypress": "^4.5.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-html": "^6.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
     "jest": "^25.5.4",
+    "prettier": "^2.0.5",
     "storybook-addon-styled-component-theme": "^1.3.0"
   }
 }

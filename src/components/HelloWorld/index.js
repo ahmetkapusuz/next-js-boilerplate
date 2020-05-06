@@ -6,12 +6,10 @@ const Header = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-const HelloWorld = () => {
-  return (
-    <div>
-      <Header>Hello World</Header>
-    </div>
-  );
-};
+const HelloWorld = () => (
+  <div>
+    <Header>Hello World</Header>
+  </div>
+);
 
 export default HelloWorld;

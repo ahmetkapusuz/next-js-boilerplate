@@ -3,6 +3,14 @@ const {
   PHASE_PRODUCTION_BUILD,
 } = require('next/constants');
 
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+});
+
 // This uses phases as outlined here: https://nextjs.org/docs/#custom-configuration
 module.exports = (phase) => {
   // when started in development mode `next dev` or `npm run dev` regardless of the value of STAGING environmental variable
@@ -41,9 +49,10 @@ module.exports = (phase) => {
     defaultTheme: 'light',
   };
 
-  return {
+  return withMDX({
     env,
     serverRuntimeConfig,
     publicRuntimeConfig,
-  };
+    pageExtensions: ['js', 'jsx', 'mdx'],
+  });
 };

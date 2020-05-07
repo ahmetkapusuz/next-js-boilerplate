@@ -6,11 +6,17 @@ const Container = styled.div`
   text-align: center;
 `;
 
-export default () => (
+const Home = () => (
   <Container>
     <HelloWorld />
     <Link href="/characters">
       <a>Characters</a>
     </Link>
+    <br />
+    <Link href="/mdxExample">
+      <a>MDX Example</a>
+    </Link>
   </Container>
 );
+
+export default Home;

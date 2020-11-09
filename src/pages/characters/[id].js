@@ -1,11 +1,10 @@
+import { useQuery, gql } from '@apollo/client';
 import React from 'react';
-import { withApollo } from '../../lib/apollo';
-import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 export const CHARACTER_DETAIL = gql`
-  query CharacterDetail($id: ID) {
+  query CharacterDetail($id: ID!) {
     character(id: $id) {
       id
       name
@@ -22,10 +21,11 @@ const CharacterDetail = () => {
 
   const { loading, error, data } = useQuery(CHARACTER_DETAIL, {
     variables: { id },
+    skip: Number.isNaN(id),
     // Setting this value to true will make the component rerender when
     // the "networkStatus" changes, so we are able to know if it is fetching
     // more data
-    notifyOnNetworkStatusChange: false,
+    notifyOnNetworkStatusChange: true,
   });
 
   if (error) return <div>Error fetching data</div>;
@@ -37,7 +37,12 @@ const CharacterDetail = () => {
     <div>
       {character && (
         <>
-          <img src={character.image} alt="Character image" />
+          <Image
+            src={character.image}
+            alt={`${character.name} image`}
+            width={300}
+            height={300}
+          />
           <div>
             <span>{character.id}</span> - <span>{character.name}</span>
           </div>
@@ -47,4 +52,4 @@ const CharacterDetail = () => {
   );
 };
 
-export default withApollo({ ssr: true })(CharacterDetail);
+export default CharacterDetail;

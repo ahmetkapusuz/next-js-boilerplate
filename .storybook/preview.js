@@ -1,19 +1,17 @@
 import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
+import { configure } from '@storybook/react';
 import { GlobalStyle } from '../src/styles/global';
-import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import theme from '../src/styles/theme';
+import { ThemeProvider } from 'styled-components';
 
-// Add more themes to array if there is more than one
-const themes = [{ name: 'default', ...theme }];
-addDecorator(withThemesProvider(themes));
-
-addDecorator((story) => (
-  <>
-    <GlobalStyle />
-    {story()}
-  </>
-));
+export const decorators = [
+  (Story) => (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Story />
+    </ThemeProvider>
+  ),
+];
 
 // automatically import all files ending in *.stories.js|mdx
 configure([require.context('../src', true, /\.stories\.(js|mdx)$/)], module);

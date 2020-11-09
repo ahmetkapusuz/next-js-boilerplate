@@ -53,6 +53,9 @@ module.exports = (phase) => {
     env,
     serverRuntimeConfig,
     publicRuntimeConfig,
+    images: {
+      domains: ['rickandmortyapi.com'],
+    },
     pageExtensions: ['js', 'jsx', 'mdx'],
   });
 };

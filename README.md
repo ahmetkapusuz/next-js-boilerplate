@@ -2,6 +2,8 @@
 
 NextJS Boilerplate application to make it easy to start creating awesome server side rendered React applications.
 
+## __*!!! WORK IN PROGRESS !!!*__
+
 ## Features
 
 - [Next.js](https://nextjs.org/)
@@ -47,6 +49,10 @@ Builds app for production (the app will be build into the .next folder).
 `yarn start`
 
 Starts app on production mode.
+
+### Start Storybook
+
+`yarn storybook`
 
 ### Open Cypress
 

@@ -1,10 +1,9 @@
 import { useQuery, gql } from '@apollo/client';
 import React from 'react';
-import { withApollo } from '../../lib/apollo';
 import { useRouter } from 'next/router';
 
 export const CHARACTER_DETAIL = gql`
-  query CharacterDetail($id: ID) {
+  query CharacterDetail($id: ID!) {
     character(id: $id) {
       id
       name
@@ -21,11 +20,16 @@ const CharacterDetail = () => {
 
   const { loading, error, data } = useQuery(CHARACTER_DETAIL, {
     variables: { id },
+    skip: Number.isNaN(id),
     // Setting this value to true will make the component rerender when
     // the "networkStatus" changes, so we are able to know if it is fetching
     // more data
-    notifyOnNetworkStatusChange: false,
+    notifyOnNetworkStatusChange: true,
   });
+
+  console.log('id', id);
+
+  if (!id) return <div>ID undefined</div>;
 
   if (error) return <div>Error fetching data</div>;
   if (loading) return <div>Loading</div>;
@@ -46,4 +50,4 @@ const CharacterDetail = () => {
   );
 };
 
-export default withApollo({ ssr: true })(CharacterDetail);
+export default CharacterDetail;

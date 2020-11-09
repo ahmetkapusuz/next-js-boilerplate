@@ -1,6 +1,7 @@
 import { useQuery, gql } from '@apollo/client';
 import React from 'react';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 export const CHARACTER_DETAIL = gql`
   query CharacterDetail($id: ID!) {
@@ -27,10 +28,6 @@ const CharacterDetail = () => {
     notifyOnNetworkStatusChange: true,
   });
 
-  console.log('id', id);
-
-  if (!id) return <div>ID undefined</div>;
-
   if (error) return <div>Error fetching data</div>;
   if (loading) return <div>Loading</div>;
 
@@ -40,7 +37,12 @@ const CharacterDetail = () => {
     <div>
       {character && (
         <>
-          <img src={character.image} alt="Character image" />
+          <Image
+            src={character.image}
+            alt={`${character.name} image`}
+            width={300}
+            height={300}
+          />
           <div>
             <span>{character.id}</span> - <span>{character.name}</span>
           </div>

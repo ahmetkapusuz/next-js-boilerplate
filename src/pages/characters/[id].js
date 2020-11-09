@@ -1,7 +1,6 @@
+import { useQuery, gql } from '@apollo/client';
 import React from 'react';
 import { withApollo } from '../../lib/apollo';
-import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 import { useRouter } from 'next/router';
 
 export const CHARACTER_DETAIL = gql`
